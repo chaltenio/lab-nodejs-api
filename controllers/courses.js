@@ -18,8 +18,8 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
             data: courses
         });
     } else {
-        res.status(200).json(res.advanceResults)
-        //console.log(res.advanceResults);
+        res.status(200).json(res.advancedResults)
+        //console.log(res.advancedResults);
     }    
 });
 

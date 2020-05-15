@@ -1,4 +1,4 @@
-const advanceResults = (model, populate) => async (req, res, next) => {
+const advancedResults = (model, populate) => async (req, res, next) => {
     let query;
 
     // Copy req.query
@@ -66,7 +66,7 @@ const advanceResults = (model, populate) => async (req, res, next) => {
       };
     }
     
-    res.advanceResults = {
+    res.advancedResults = {
         succes: true,
         count: results.length,
         pagination,
@@ -77,4 +77,4 @@ const advanceResults = (model, populate) => async (req, res, next) => {
     
 };
 
-module.exports = advanceResults;
+module.exports = advancedResults;
