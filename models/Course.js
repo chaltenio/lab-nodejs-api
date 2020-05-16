@@ -8,7 +8,6 @@ const CourseSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        trim: true,
         required: [true, 'Please add a description']
     },
     weeks: {
