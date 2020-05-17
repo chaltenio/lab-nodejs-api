@@ -64,12 +64,21 @@ exports.addReview = asyncHandler(async (req, res, next) => {
     );
   }
 
-  const review = await Review.create(req.body);
+  try {
+    const review = await Review.create(req.body);
 
-  res.status(201).json({
-    succes: true,
-    data: review,
-  });
+    res.status(201).json({
+      succes: true,
+      data: review,
+    });    
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json({
+      success: false,
+      data: 'Duplicate review',
+    });    
+  }
+
 });
 
 // @desc    Update review
